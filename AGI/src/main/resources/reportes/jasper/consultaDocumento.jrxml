@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Prueba" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5b56ba12-89b5-436e-a7c7-51960149a8fb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="Dataset1" uuid="a72f8de7-cc3d-45cf-8da8-3ef913274d57">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="rutaImagenLogo" class="java.lang.String"/>
+	<parameter name="usuario" class="java.lang.String"/>
+	<parameter name="fechaActual" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[codigo]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[descripcion]]></fieldDescription>
+	</field>
+	<field name="revision.numero" class="java.lang.Long">
+		<fieldDescription><![CDATA[revision.numero]]></fieldDescription>
+	</field>
+	<field name="revision.fechaAprobacion" class="java.util.Date">
+		<fieldDescription><![CDATA[revision.fechaAprobacion]]></fieldDescription>
+	</field>
+	<field name="estado.v_descons" class="java.lang.String">
+		<fieldDescription><![CDATA[estado.v_descons]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="17" width="340" height="31" uuid="131fa13c-a50d-4b7f-8365-e9e59c53bd88"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consulta de Documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="60" height="17" uuid="c0b14893-da02-44a2-9709-3afcd60fb5ed"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha y Hora:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH:mm" isBlankWhenNull="true">
+				<reportElement x="500" y="0" width="75" height="17" uuid="47fa13e5-369f-4fb7-943c-aaf6398757c3"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="17" width="60" height="17" uuid="eb0d9441-8cf4-4e8c-8ad6-4b26f3068404"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Página:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="500" y="18" width="5" height="17" uuid="cf8cd3ca-5f4d-40ef-934d-25061879a442"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="505" y="18" width="45" height="17" uuid="07b2df7d-099a-4631-a1c3-d5467f006be4"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="35" width="60" height="17" uuid="2da1331f-8a34-403d-983b-d9b892b8ad25"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="500" y="35" width="75" height="17" uuid="7bc89351-7cd3-464b-a766-d9bda510ee9a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{usuario}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="10" width="90" height="50" uuid="611ff562-3b1f-4d61-b716-e42a864d5cba"/>
+				<imageExpression><![CDATA[$P{rutaImagenLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="80" height="20" backcolor="#CCCCCC" uuid="49b9a150-f67a-4c43-8e09-b8f07ca5ffae"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="0" width="210" height="20" backcolor="#CCCCCC" uuid="be754e82-a2c7-494f-bb56-427af30c2795"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Título]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="290" y="0" width="50" height="20" backcolor="#CCCCCC" uuid="8819affa-c0cd-4dbc-9873-73592847764e"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Revisión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="340" y="0" width="130" height="20" backcolor="#CCCCCC" uuid="db382183-b663-45f2-a545-d02dd80dff04"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Aprobación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="470" y="0" width="85" height="20" backcolor="#CCCCCC" uuid="0938696c-ba5d-4437-a567-e6c3c320df98"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="80" y="0" width="210" height="20" uuid="233112d3-41e4-42db-b10d-a32b6a4e6db2"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="80" height="20" uuid="761ba829-01aa-4f8e-9b9f-37e5e5f59912"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="290" y="0" width="50" height="20" uuid="f841493a-69ed-4a48-a223-38b319eb207e"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{revision.numero}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="340" y="0" width="130" height="20" uuid="bc5d281c-6d9f-4a04-8313-9e3e97b93392"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{revision.fechaAprobacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="ElementGroupHeight" x="470" y="0" width="85" height="20" uuid="61177da8-3e77-41a8-8d03-ed3889f47cd1"/>
+				<box padding="1">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estado.v_descons}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="15" uuid="7eb2a08b-d0d8-4329-add3-2c25ebf0a822"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[x-------------------------------------- FIN DE REPORTE -----------------------------------x]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

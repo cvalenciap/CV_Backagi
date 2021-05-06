@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="sed-seg-core-beans"/>
+<aop-project name="sed-seg-ws-cliente"/>
+<aop-project name="AGI"/>
+</aop-reference-model>
